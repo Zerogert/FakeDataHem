@@ -1,0 +1,78 @@
+﻿<Window x:Class="FakeDataHem.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FakeDataHem"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="1200" Width="1600">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Column="1" Orientation="Horizontal">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label>Файл FakeData:</Label>
+                    <Label Name="PathFile">0</Label>
+                    <Button Click="Button_Click">Открыть</Button>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Label>Широта:</Label>
+                    <Label Name="Ltd">0</Label>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Label>Долгота:</Label>
+                    <Label Name="Lng">0</Label>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Label>Высота:</Label>
+                    <Label Name="Alt">0</Label>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label>Центральная Широта:</Label>
+                    <TextBox Name="SourceLtd" MinWidth="100" LostFocus="SourceLtd_LostFocus">0</TextBox>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Label>Центральная Долгота:</Label>
+                    <TextBox Name="SourceLng" MinWidth="100" LostFocus="SourceLtd_LostFocus">0</TextBox>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Label>Азимут:</Label>
+                    <Slider Name="Azimuth"  Minimum="0" Maximum="360" MinWidth="200" ValueChanged="Azimuth_ValueChanged"></Slider>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel>
+                <Button Click="Button_Click_Plan_Move">Переместиться к плану</Button>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <Label>Высота</Label>
+            <Slider Name="AltSlider" Maximum="200" Minimum="0" Orientation="Vertical" Height="1000" ValueChanged="AltSlider_ValueChanged"></Slider>
+        </StackPanel>
+        
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <Canvas Name="CanvasMap" Background="Gray" Width="900" Height="900" MouseLeftButtonUp="Canvas_MouseLeftButtonUp">
+                <Label Name="UnitMark" Canvas.Left="10" Canvas.Top="20">*</Label>
+            </Canvas>
+        </StackPanel>
+    </Grid>
+</Window>

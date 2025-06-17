@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35027.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FakeDataHem", "FakeDataHem\FakeDataHem.csproj", "{D82FF81C-3D9F-4841-822B-D7644570AB99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HemConverter", "HemConverter\HemConverter.csproj", "{8D03070A-37C5-4175-900E-3CC8D3E150CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FakerHEM", "FakerHEM\FakerHEM.csproj", "{63F7A79E-D535-4B0A-85AA-CA931E61FB83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FakerDumpAnalyzer", "FakerDumpAnalyzer\FakerDumpAnalyzer.csproj", "{53FECB74-8829-49CD-B1AB-8ABA03935C2D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D82FF81C-3D9F-4841-822B-D7644570AB99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D82FF81C-3D9F-4841-822B-D7644570AB99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D82FF81C-3D9F-4841-822B-D7644570AB99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D82FF81C-3D9F-4841-822B-D7644570AB99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D03070A-37C5-4175-900E-3CC8D3E150CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D03070A-37C5-4175-900E-3CC8D3E150CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D03070A-37C5-4175-900E-3CC8D3E150CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D03070A-37C5-4175-900E-3CC8D3E150CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63F7A79E-D535-4B0A-85AA-CA931E61FB83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63F7A79E-D535-4B0A-85AA-CA931E61FB83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63F7A79E-D535-4B0A-85AA-CA931E61FB83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63F7A79E-D535-4B0A-85AA-CA931E61FB83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53FECB74-8829-49CD-B1AB-8ABA03935C2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53FECB74-8829-49CD-B1AB-8ABA03935C2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53FECB74-8829-49CD-B1AB-8ABA03935C2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53FECB74-8829-49CD-B1AB-8ABA03935C2D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7B562601-3D3E-41BC-B90B-B667EC75AE9E}
+	EndGlobalSection
+EndGlobal

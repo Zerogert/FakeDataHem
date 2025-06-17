@@ -1,0 +1,44 @@
+﻿<Window x:Class="FakerHEM.Views.GnssControl"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FakerHEM.Views"
+        mc:Ignorable="d"
+        Title="GnssControl" Height="450" Width="800" ResizeMode="NoResize" SizeToContent="WidthAndHeight">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Смещение по X "></TextBlock>
+                
+                <TextBlock Text="От: "></TextBlock>
+                <TextBox Width="50" Text="{Binding MinX}"></TextBox>
+
+                <TextBlock Text="До: "></TextBlock>
+                <TextBox Width="50" Text="{Binding MaxX}"></TextBox>
+
+                <TextBlock Text="Инкремент: "></TextBlock>
+                <TextBox Width="50" Text="{Binding IncrementX}"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Смещение по Y "></TextBlock>
+
+                <TextBlock Text="От: "></TextBlock>
+                <TextBox Width="50" Text="{Binding MinY}"></TextBox>
+
+                <TextBlock Text="До: "></TextBlock>
+                <TextBox Width="50" Text="{Binding MaxY}"></TextBox>
+
+                <TextBlock Text="Инкремент: "></TextBlock>
+                <TextBox Width="50" Text="{Binding IncrementY}"></TextBox>
+            </StackPanel>
+            <StackPanel>
+                <Button Content="Старт" Command="{Binding ChangeRunEmulateCommand}"></Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
