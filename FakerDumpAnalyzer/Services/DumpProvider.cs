@@ -19,7 +19,6 @@ namespace FakerDumpAnalyzer.Services
         {
             var dump = await _client.GetDumpModelAsync();
             Dump = dump;
-
             OnUpdated.Invoke(this, EventArgs.Empty);
         }
     }

@@ -22,18 +22,21 @@ namespace FakerDumpAnalyzer.ViewModels
         public ICommand RefreshData { get; private set; }
         public ContentViewModel ContentViewModel { get; private set; }
         public ExporterDesmosViewModel ExporterDesmosViewModel { get; private set; }
-        
+        public JsonExporterDesmosViewModel JsonExporterDesmosViewModel { get; private set; }
+
         public MainViewModel(
             AppSettings settingsProvider,
             DumpProvider dumpProvider,
             ContentViewModel contentViewModel,
-            ExporterDesmosViewModel exporterDesmosViewModel)
+            ExporterDesmosViewModel exporterDesmosViewModel,
+            JsonExporterDesmosViewModel jsonExporterDesmosViewModel)
         {
             _dumperProvider = dumpProvider;
             _settings = settingsProvider;
             RefreshData = new RelayCommand(RefreshDump);
             ContentViewModel = contentViewModel;
             ExporterDesmosViewModel = exporterDesmosViewModel;
+            JsonExporterDesmosViewModel = jsonExporterDesmosViewModel;
         }
 
         private void RefreshDump()

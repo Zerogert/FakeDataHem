@@ -27,6 +27,12 @@
                     <views:ExporterDesmos></views:ExporterDesmos>
                 </TabItem.Content>
             </TabItem>
+
+            <TabItem Header="JSON Экспортер в Desmos 3d"  DataContext="{Binding JsonExporterDesmosViewModel}">
+                <TabItem.Content>
+                    <views:JsonExporterDesmosView></views:JsonExporterDesmosView>
+                </TabItem.Content>
+            </TabItem>
         </TabControl>
     </Grid>
 </Window>

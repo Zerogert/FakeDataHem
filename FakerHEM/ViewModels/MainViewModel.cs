@@ -117,7 +117,7 @@ namespace FakerHEM.ViewModels
         {
             if (Plans.Any())
             {
-                var firstPlan = Plans.First();
+                var firstPlan = Plans.FirstOrDefault(x=>x.UpperPoints.Count>1);
                 var minX = firstPlan.UpperPoints.Min(p => p.X);
                 var maxX = firstPlan.UpperPoints.Max(p => p.X);
                 var minY = firstPlan.UpperPoints.Min(p => p.Y);

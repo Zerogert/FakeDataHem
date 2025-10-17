@@ -1,4 +1,5 @@
 ﻿using System.Globalization;
+using System.Text.Json.Serialization;
 
 namespace FakerDumpAnalyzer.Services
 {
@@ -30,10 +31,25 @@ namespace FakerDumpAnalyzer.Services
 
         public static string ExportPoints(List<DPoint> dPoints, string attribute)
         {
+            CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
             var pt1 = dPoints.Select((x) => $@"\left({double.Round(x.X, 4)}, {double.Round(x.Y,4)}, {double.Round(x.Z,4)}\right)");
             var p1 = $@"{attribute}=\left[{string.Join(",", pt1)}\right]";
 
             return p1;
+        }
+
+        public static string ExportPolyline(List<DPoint> dPoints, string attribute)
+        {
+            CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
+            var intersections = dPoints;
+            var pt1 = intersections.Select((x) => $@"\left({double.Round(x.X, 4)}, {double.Round(x.Y, 4)}, {double.Round(x.Z, 4)}\right)");
+            var p1 = $@"{attribute}_1=\left[{string.Join(",", pt1)}\right]";
+
+            var pt2 = intersections.Skip(1).Select((x) => $@"\left({double.Round(x.X, 4)}, {double.Round(x.Y, 4)}, {x.Z}\right)");
+            var p2 = $@"{attribute}_2=\left[{string.Join(",", pt2)}\right]";
+            var poly = @"\operatorname{segment}\left" + $@"({attribute}_1,{attribute}_2\right)";
+
+            return $"{p1}\n\n{p2}\n\n{poly}";
         }
     }
 
@@ -75,8 +91,15 @@ namespace FakerDumpAnalyzer.Services
             ThirdVertex = thirdVertex;
         }
 
+        [JsonPropertyName("firstVertex")]
         public DPoint FirstVertex { get; set; }
+
+        [JsonPropertyName("secondVertex")]
         public DPoint SecondVertex { get; set; }
+
+        [JsonPropertyName("thirdVertex")]
         public DPoint ThirdVertex { get; set; }
+
+        public DPoint[] GetPoints() => [FirstVertex, SecondVertex, ThirdVertex];
     }
 }

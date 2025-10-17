@@ -21,6 +21,7 @@ namespace FakerDumpAnalyzer
                     services.AddSingleton<MainViewModel>();
                     services.AddSingleton<ContentViewModel>();
                     services.AddSingleton<ExporterDesmosViewModel>();
+                    services.AddSingleton<JsonExporterDesmosViewModel>();
                     services.AddSingleton<DumpProvider>();
 
                     services.AddSingleton<HemClient>();
